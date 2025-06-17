@@ -3,6 +3,7 @@
 This repository contains a visually appealing HTML page that highlights the top 5 core JavaScript concepts every developer should master.
 
 ## Concepts Covered
+
 1. Functions & Scope
 2. Asynchronous Programming
 3. Objects & Prototypal Inheritance
@@ -10,4 +11,5 @@ This repository contains a visually appealing HTML page that highlights the top 
 5. DOM Manipulation & Event Handling
 
 ## How to Use
+
 Open `index.html` in your browser to view the interactive chart.
