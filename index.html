@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Core JavaScript Concepts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .chart-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .concept-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .concept-card:nth-child(1) { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .concept-card:nth-child(2) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .concept-card:nth-child(3) { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .concept-card:nth-child(4) { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2c3e50; }
+        .concept-card:nth-child(5) { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #2c3e50; }
+        
+        .concept-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        
+        .concept-card:hover::before {
+            animation: shine 0.5s ease-in-out;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+        
+        .rank {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c3e50;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .concept-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-right: 30px;
+        }
+        
+        .concept-description {
+            font-size: 0.95em;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .importance-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        
+        .importance-fill {
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
+            animation: fillBar 2s ease-out;
+        }
+        
+        @keyframes fillBar {
+            0% { width: 0%; }
+            100% { width: var(--fill-width); }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Top 5 Core JavaScript Concepts</h1>
+        <p style="text-align: center; color: #7f8c8d; font-size: 1.1em; margin-bottom: 30px;">
+            Master these concepts to become great at JavaScript programming
+        </p>
+        
+        <div class="chart-container">
+            <div class="concept-card">
+                <div class="rank">1</div>
+                <div class="concept-title">Functions & Scope</div>
+                <div class="concept-description">
+                    Master function declarations, expressions, arrow functions, and crucially how scope works (global, function, block scope) and closures. Essential for avoiding bugs and writing clean code.
+                </div>
+                <div class="importance-bar">
+                    <div class="importance-fill" style="--fill-width: 100%;"></div>
+                </div>
+            </div>
+            
+            <div class="concept-card">
+                <div class="rank">2</div>
+                <div class="concept-title">Asynchronous Programming</div>
+                <div class="concept-description">
+                    Callbacks, Promises, and async/await are essential for handling API calls, file operations, timers, and user interactions. Understanding the event loop is crucial.
+                </div>
+                <div class="importance-bar">
+                    <div class="importance-fill" style="--fill-width: 95%;"></div>
+                </div>
+            </div>
+            
+            <div class="concept-card">
+                <div class="rank">3</div>
+                <div class="concept-title">Objects & Prototypal Inheritance</div>
+                <div class="concept-description">
+                    JavaScript's unique object system, prototype chains, the 'this' keyword, and inheritance patterns. Critical for object-oriented JavaScript and understanding the language.
+                </div>
+                <div class="importance-bar">
+                    <div class="importance-fill" style="--fill-width: 90%;"></div>
+                </div>
+            </div>
+            
+            <div class="concept-card">
+                <div class="rank">4</div>
+                <div class="concept-title">Array Methods & Functional Programming</div>
+                <div class="concept-description">
+                    Methods like map, filter, reduce, forEach, find, and some. These higher-order functions enable declarative, readable code and are essential for data manipulation.
+                </div>
+                <div class="importance-bar">
+                    <div class="importance-fill" style="--fill-width: 85%;"></div>
+                </div>
+            </div>
+            
+            <div class="concept-card">
+                <div class="rank">5</div>
+                <div class="concept-title">DOM Manipulation & Event Handling</div>
+                <div class="concept-description">
+                    Selecting elements, modifying the DOM, handling events, and managing JavaScript-webpage interaction. Fundamental for front-end development and understanding JS environments.
+                </div>
+                <div class="importance-bar">
+                    <div class="importance-fill" style="--fill-width: 80%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            💡 These concepts form the backbone of JavaScript programming
+        </div>
+    </div>
+</body>
+</html>
