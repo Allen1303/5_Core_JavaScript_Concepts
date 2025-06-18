@@ -4,13 +4,18 @@
 const counterBtn = document.getElementById("counter-btn");
 const counterOutput = document.getElementById("counter-output");
 
-function outerFunction() {
+function makeCounter() {
   let counter = 0;
-
-  counterBtn.addEventListener("click", function () {
-  counter++;
-  console.log(counter);
-    counterOutput.textContent = `Current count ${counter}`;
-  });
+  // Inner function that creates the Closure
+  return function () {
+    counter++;
+    counterOutput.textContent = `Current count: ${counter}`;
+    if (counter === 5 || counter === 10) {
+      counterOutput.style.color = "red";
+    } else {
+      counterOutput.style.color = "";
+    }
+  };
 }
-outerFunction();
+const countResult = makeCounter();
+counterBtn.addEventListener("click", countResult);
