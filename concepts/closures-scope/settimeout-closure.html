@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>makeGreeter(name) Factory</title>
+    <title>setTimeout Closure Loop Demo</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -17,49 +17,46 @@
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 2px 8px #0001;
-            max-width: 600px;
+            max-width: 500px;
             margin: 2em auto;
             padding: 2em;
         }
 
         h1 {
-            color: #4f46e5;
-        }
-
-        .exercise {
-            margin-bottom: 2em;
+            color: #be185d;
         }
 
         button {
-            background: #4f46e5;
+            background: #be185d;
             color: #fff;
             border: none;
             border-radius: 6px;
             padding: 0.5em 1em;
             cursor: pointer;
+            margin-bottom: 1em;
         }
 
         button:hover {
-            background: #3730a3;
+            background: #831843;
         }
 
-        .output {
-            margin-top: 1em;
-            color: #333;
+        ul {
+            padding-left: 1.2em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>makeGreeter(name) Factory</h1>
-        <div class="exercise">
-            <!-- JS goes here -->
-        </div>
+        <h1>setTimeout Closure Loop</h1>
+        <button id="start-loop">Start setTimeout Loop</button>
+        <ul id="output"></ul>
     </div>
-    <script>
-        // Write your makeGreeter factory code here!
-    </script>
+    <script src="settimeout-closure.js"></script>
 </body>
 
 </html>
