@@ -7,54 +7,126 @@
     <title>setTimeout Closure Loop Demo</title>
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #f7fafc;
+            background: linear-gradient(135deg, #e0d674 0%, #fffbe6 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            padding: 2em;
         }
 
         .container {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px #0001;
-            max-width: 500px;
-            margin: 2em auto;
-            padding: 2em;
+            max-width: 420px;
+            margin: 48px auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(255, 255, 255, 0.32);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 24px 0 rgba(247, 224, 24, 0.18);
+            border: 1.5px solid rgba(247, 224, 24, 0.32);
         }
 
         h1 {
-            color: #be185d;
+            color: #f7b018;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .desc {
+            color: #333;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
         }
 
         button {
-            background: #be185d;
-            color: #fff;
+            background: #dfcb15;
+            color: #222;
             border: none;
-            border-radius: 6px;
-            padding: 0.5em 1em;
+            border-radius: 8px;
+            padding: 10px 22px;
+            font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
-            margin-bottom: 1em;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 8px 0 rgba(247, 224, 24, 0.12);
+            transition: background 0.2s;
         }
 
         button:hover {
-            background: #831843;
+            background: #ffe666;
         }
 
-        ul {
-            padding-left: 1.2em;
+        ul#output {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px 0;
+            min-height: 80px;
         }
 
-        li {
-            margin-bottom: 0.5em;
+        ul#output li {
+            background: rgba(247, 224, 24, 0.18);
+            color: #222;
+            margin-bottom: 8px;
+            padding: 8px 0 8px 12px;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            box-shadow: 0 1px 4px 0 rgba(247, 224, 24, 0.08);
+        }
+
+        .notes {
+            background: rgba(247, 224, 24, 0.10);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 1.02rem;
+            color: #222;
+        }
+
+        .notes h2 {
+            color: #f7b018;
+            font-size: 1.1rem;
+            margin: 0 0 6px 0;
+        }
+
+        .notes ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .notes li {
+            color: #444;
+        }
+
+        code {
+            background: #fffbe6;
+            color: #b8860b;
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 0.98em;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container glass">
         <h1>setTimeout Closure Loop</h1>
+        <p class="desc">Click the button to see numbers appear one by one, demonstrating closure with
+            <code>setTimeout</code> and DOM updates.
+        </p>
         <button id="start-loop">Start setTimeout Loop</button>
         <ul id="output"></ul>
+        <div class="notes">
+            <h2>How it Works</h2>
+            <ul>
+                <li>Each number is added to the DOM with a delay, using <code>setTimeout</code> in a loop.</li>
+                <li>Closures ensure each timeout "remembers" its own value.</li>
+                <li>Try to predict the output before clicking!</li>
+            </ul>
+        </div>
     </div>
     <script src="settimeout-closure.js"></script>
 </body>
