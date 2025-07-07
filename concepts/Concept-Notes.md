@@ -92,3 +92,26 @@ Closures are my go-to tool for:
 Whenever I want to keep state safe from the outside world, or need a function to "remember" something from when it was created, I reach for closures. They make my code more robust, modular, and secure—especially in modern web apps.
 
 ---
+### Week of June 30
+
+This week involved hands-on practice with core JavaScript patterns, including:
+
+*   **Asynchronous Loops & Scope:** Explored how `setTimeout` interacts with loop variables and the importance of using `let` for correct block scoping to preserve values across asynchronous calls.
+    *   *Key Takeaway 1:* Async calls (like `setTimeout`) inside loops require careful scope management.
+    *   *Key Takeaway 2:* Using `let` correctly captures the loop variable's value per iteration, preventing unexpected behavior seen with `var`.
+    ```javascript
+    // Using 'let' to correctly capture index in async loop
+    for (let i = 0; i < 5; i++) {
+      setTimeout(() => console.log(`Index: ${i + 1}`), i * 1500);
+    }
+    ```
+
+*   **Basic Task Management:** Built a simple task list application to practice fundamental DOM manipulation and array methods. This covered adding items (`push`), rendering lists (`forEach`), toggling state (`addEventListener`, object property updates), and filtering data (`filter`).
+    *   *Key Takeaway 1:* Essential array methods (`push`, `filter`, `forEach`) are powerful for managing list data.
+    *   *Key Takeaway 2:* Combining DOM manipulation and event listeners is key to building interactive UI components.
+    ```javascript
+    // Core data manipulation examples: add, filter, render loop
+    tasks.push({ text: taskText, completed: false }); // Add
+    const uncompleted = tasks.filter(task => !task.completed); // Filter
+    taskArray.forEach(...) // Render (loop)
+    ```
