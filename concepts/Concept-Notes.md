@@ -115,3 +115,40 @@ This week involved hands-on practice with core JavaScript patterns, including:
     const uncompleted = tasks.filter(task => !task.completed); // Filter
     taskArray.forEach(...) // Render (loop)
     ```
+Absolutely! Here's the journal entry **with a short code snippet** from your Step Viewer mini-project to highlight your use of recursion, closure, and DOM interaction:
+
+---
+
+### 🗓️ **Journal Entry – Week of July 7**
+
+**🧩 Project:** Step Viewer Challenge (Closures + Recursion + DOM)
+
+**Summary:**
+Completed a timed step viewer that revealed each instruction with a delay. This helped reinforce:
+
+* ✅ **Closures** — Using `setTimeout` retained access to variables like `index`.
+* ✅ **Recursion** — Repeatedly called `showSteps()` inside itself with an updated index.
+* ✅ **Base Case Priority** — Learned that placing the **base case first** is essential to prevent extra rendering or infinite recursion.
+* ✅ **DOM Updates** — Dynamically appended list items for each step to the UI.
+
+**🧠 Reflection:**
+This challenge deepened my understanding of how recursion can be used in UI interactions—not just data structures. It also clarified how and when closures preserve state between delayed executions.
+
+---
+
+**🔍 Snippet:**
+
+```js
+function showSteps(index = 0) {
+  if (index >= steps.length) return; // ✅ Base case first
+
+  setTimeout(() => {
+    const liEl = document.createElement('li');
+    liEl.textContent = steps[index];
+    stepBox.appendChild(liEl);
+    showSteps(index + 1); // 🔁 Recursive call
+  }, 2000);
+}
+```
+
+
